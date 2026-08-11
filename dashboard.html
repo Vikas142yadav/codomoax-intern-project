@@ -1,257 +1,37 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Blog App</title>
-
     <link rel="stylesheet" href="style.css">
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 </head>
-
 <body>
-
-    <!-- Navigation -->
-
-    <header>
-
-        <nav class="navbar">
-
-            <div class="logo">
-                <i class="fa-solid fa-blog"></i>
-                BlogApp
-            </div>
-
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="dashboard.html" class="active">Dashboard</a></li>
-                <li><a href="create-blog.html">Create Blog</a></li>
-                <li><a href="login.html">Logout</a></li>
-            </ul>
-
-            <div class="menu-btn" id="menuBtn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-
-        </nav>
-
-    </header>
-
-    <!-- Dashboard -->
-
-    <section class="container">
-
-        <div class="dashboard-header">
-
-            <h2>My Blogs</h2>
-
-            <a href="create-blog.html" class="btn">
-                <i class="fa-solid fa-plus"></i>
-                Create Blog
-            </a>
-
-        </div>
-
-        <div class="blog-grid">
-
-            <!-- Blog 1 -->
-
-            <div class="blog-card">
-
-                <img src="https://picsum.photos/400/250?10" alt="Blog">
-
-                <div class="blog-content">
-
-                    <h3>HTML Basics</h3>
-
-                    <p>
-                        Learn the fundamentals of HTML and build
-                        your first web page from scratch.
-                    </p>
-
-                    <div class="card-buttons">
-
-                        <button class="edit-btn">
-                            <i class="fa-solid fa-pen"></i>
-                            Edit
-                        </button>
-
-                        <button class="delete-btn">
-                            <i class="fa-solid fa-trash"></i>
-                            Delete
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Blog 2 -->
-
-            <div class="blog-card">
-
-                <img src="https://picsum.photos/400/250?20" alt="Blog">
-
-                <div class="blog-content">
-
-                    <h3>CSS Animations</h3>
-
-                    <p>
-                        Create beautiful animations using CSS
-                        transitions and keyframes.
-                    </p>
-
-                    <div class="card-buttons">
-
-                        <button class="edit-btn">
-                            <i class="fa-solid fa-pen"></i>
-                            Edit
-                        </button>
-
-                        <button class="delete-btn">
-                            <i class="fa-solid fa-trash"></i>
-                            Delete
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Blog 3 -->
-
-            <div class="blog-card">
-
-                <img src="https://picsum.photos/400/250?30" alt="Blog">
-
-                <div class="blog-content">
-
-                    <h3>JavaScript Tips</h3>
-
-                    <p>
-                        Improve your JavaScript skills with useful
-                        coding techniques and best practices.
-                    </p>
-
-                    <div class="card-buttons">
-
-                        <button class="edit-btn">
-                            <i class="fa-solid fa-pen"></i>
-                            Edit
-                        </button>
-
-                        <button class="delete-btn">
-                            <i class="fa-solid fa-trash"></i>
-                            Delete
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Footer -->
-
-    <footer>
-
-        <p>
-            © 2026 Blog Application | Dashboard
-        </p>
-
-    </footer>
-
-    <script src="script.js"></script>
-
+<header>
+    <nav class="navbar">
+        <div class="logo"><i class="fa-solid fa-blog"></i>BlogApp</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dashboard.html" class="active">Dashboard</a></li>
+            <li><a href="create-blog.html">Create Blog</a></li>
+            <li><a href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+        <div class="menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></div>
+    </nav>
+</header>
+<section class="container">
+    <div class="dashboard-header">
+        <h2>Dashboard</h2>
+        <a href="create-blog.html" class="btn"><i class="fa-solid fa-plus"></i> Create Blog</a>
+    </div>
+    <div class="blog-grid" id="blogGrid">
+        <p class="empty-state">Loading your blogs...</p>
+    </div>
+</section>
+<footer>
+    <p>© 2026 Blog Application | Dashboard</p>
+</footer>
+<script src="script.js"></script>
 </body>
-
-=======
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Blog App</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-</head>
-
-<body>
-
-    <!-- Navigation -->
-
-    <header>
-
-        <nav class="navbar">
-
-            <div class="logo">
-                <i class="fa-solid fa-blog"></i>
-                BlogApp
-            </div>
-
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="dashboard.html" class="active">Dashboard</a></li>
-                <li><a href="create-blog.html">Create Blog</a></li>
-                <li><a href="#" id="logoutBtn">Logout</a></li>
-            </ul>
-
-            <div class="menu-btn" id="menuBtn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-
-        </nav>
-
-    </header>
-
-    <!-- Dashboard -->
-
-    <section class="container">
-
-        <div class="dashboard-header">
-
-            <h2>My Blogs</h2>
-
-            <a href="create-blog.html" class="btn">
-                <i class="fa-solid fa-plus"></i>
-                Create Blog
-            </a>
-
-        </div>
-
-        <div class="blog-grid" id="blogGrid">
-
-            <!-- Blogs will be injected here -->
-
-        </div>
-
-    </section>
-
-    <!-- Footer -->
-
-    <footer>
-
-        <p>
-            © 2026 Blog Application | Dashboard
-        </p>
-
-    </footer>
-
-    <script src="script.js"></script>
-
-</body>
-
->>>>>>> 18b7660 (feat: add Express backend and frontend API integration)
 </html>

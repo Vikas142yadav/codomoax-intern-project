@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog App | Home</title>
+    <title>Blog Details | Blog App</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 </head>
@@ -12,29 +12,21 @@
     <nav class="navbar">
         <div class="logo"><i class="fa-solid fa-blog"></i>BlogApp</div>
         <ul class="nav-links" id="navLinks">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="create-blog.html">Create Blog</a></li>
+            <li><a href="#" id="logoutBtn">Logout</a></li>
         </ul>
         <div class="menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></div>
     </nav>
 </header>
-<section class="hero">
-    <div class="hero-content">
-        <h1>Share Your Stories With The World</h1>
-        <p>Create, Read and Manage Blogs Easily. A modern blogging platform built using HTML, CSS and JavaScript.</p>
-        <a href="register.html" class="btn">Get Started</a>
-    </div>
-</section>
 <section class="container">
-    <h2 class="section-title">Latest Blogs</h2>
-    <div class="blog-grid" id="blogGrid">
-        <p class="empty-state">Loading latest posts...</p>
+    <div class="blog-detail" id="blogDetail">
+        <p class="empty-state">Loading blog...</p>
     </div>
 </section>
 <footer>
-    <p>© 2026 Blog Application | Designed with ❤️</p>
+    <p>© 2026 Blog Application | Blog Details</p>
 </footer>
 <script src="script.js"></script>
 </body>

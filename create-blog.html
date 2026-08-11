@@ -1,82 +1,39 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Blog | Blog App</title>
-
     <link rel="stylesheet" href="style.css">
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 </head>
-
 <body>
-
-<!-- Navigation -->
-
 <header>
-
     <nav class="navbar">
-
-        <div class="logo">
-            <i class="fa-solid fa-blog"></i>
-            BlogApp
-        </div>
-
+        <div class="logo"><i class="fa-solid fa-blog"></i>BlogApp</div>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="dashboard.html">Dashboard</a></li>
             <li><a href="create-blog.html" class="active">Create Blog</a></li>
-            <li><a href="login.html">Logout</a></li>
+            <li><a href="#" id="logoutBtn">Logout</a></li>
         </ul>
-
-        <div class="menu-btn" id="menuBtn">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-
+        <div class="menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></div>
     </nav>
-
 </header>
-
-<!-- Create Blog Form -->
-
 <section class="form-section">
-
     <div class="form-container create-blog">
-
         <h2>Create New Blog</h2>
-
         <form id="blogForm">
-
             <div class="input-group">
-
                 <label>Blog Title</label>
-
-                <input
-                    type="text"
-                    id="title"
-                    placeholder="Enter blog title"
-                    required>
-
+                <input type="text" id="title" placeholder="Enter blog title" required>
             </div>
-
             <div class="input-group">
-
                 <label>Author Name</label>
-
-                <input
-                    type="text"
-                    id="author"
-                    placeholder="Enter author name"
-                    required>
-
+                <input type="text" id="author" placeholder="Enter author name" required>
             </div>
-
             <div class="input-group">
-
                 <label>Category</label>
-
                 <select id="category" required>
                     <option value="">Select Category</option>
                     <option>Technology</option>
@@ -86,193 +43,22 @@
                     <option>Business</option>
                     <option>Lifestyle</option>
                 </select>
-
             </div>
-
             <div class="input-group">
-
                 <label>Blog Image URL</label>
-
-                <input
-                    type="url"
-                    id="image"
-                    placeholder="https://example.com/image.jpg">
-
+                <input type="url" id="image" placeholder="https://example.com/image.jpg">
             </div>
-
             <div class="input-group">
-
                 <label>Blog Content</label>
-
-                <textarea
-                    id="content"
-                    rows="8"
-                    placeholder="Write your blog here..."
-                    required></textarea>
-
+                <textarea id="content" rows="8" placeholder="Write your blog here..." required></textarea>
             </div>
-
-            <button type="submit" class="btn full-btn">
-                <i class="fa-solid fa-paper-plane"></i>
-                Publish Blog
-            </button>
-
+            <button type="submit" class="btn full-btn"><i class="fa-solid fa-paper-plane"></i> Publish Blog</button>
         </form>
-
     </div>
-
 </section>
-
-<!-- Footer -->
-
 <footer>
-
-    <p>
-        © 2026 Blog Application | Create Blog
-    </p>
-
+    <p>© 2026 Blog Application | Create Blog</p>
 </footer>
-
 <script src="script.js"></script>
-
 </body>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Blog | Blog App</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-</head>
-
-<body>
-
-<!-- Navigation -->
-
-<header>
-
-    <nav class="navbar">
-
-        <div class="logo">
-            <i class="fa-solid fa-blog"></i>
-            BlogApp
-        </div>
-
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="create-blog.html" class="active">Create Blog</a></li>
-            <li><a href="login.html">Logout</a></li>
-        </ul>
-
-        <div class="menu-btn" id="menuBtn">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-
-    </nav>
-
-</header>
-
-<!-- Create Blog Form -->
-
-<section class="form-section">
-
-    <div class="form-container create-blog">
-
-        <h2>Create New Blog</h2>
-
-        <form id="blogForm">
-
-            <div class="input-group">
-
-                <label>Blog Title</label>
-
-                <input
-                    type="text"
-                    id="title"
-                    placeholder="Enter blog title"
-                    required>
-
-            </div>
-
-            <div class="input-group">
-
-                <label>Author Name</label>
-
-                <input
-                    type="text"
-                    id="author"
-                    placeholder="Enter author name"
-                    required>
-
-            </div>
-
-            <div class="input-group">
-
-                <label>Category</label>
-
-                <select id="category" required>
-                    <option value="">Select Category</option>
-                    <option>Technology</option>
-                    <option>Programming</option>
-                    <option>Travel</option>
-                    <option>Education</option>
-                    <option>Business</option>
-                    <option>Lifestyle</option>
-                </select>
-
-            </div>
-
-            <div class="input-group">
-
-                <label>Blog Image URL</label>
-
-                <input
-                    type="url"
-                    id="image"
-                    placeholder="https://example.com/image.jpg">
-
-            </div>
-
-            <div class="input-group">
-
-                <label>Blog Content</label>
-
-                <textarea
-                    id="content"
-                    rows="8"
-                    placeholder="Write your blog here..."
-                    required></textarea>
-
-            </div>
-
-            <button type="submit" class="btn full-btn">
-                <i class="fa-solid fa-paper-plane"></i>
-                Publish Blog
-            </button>
-
-        </form>
-
-    </div>
-
-</section>
-
-<!-- Footer -->
-
-<footer>
-
-    <p>
-        © 2026 Blog Application | Create Blog
-    </p>
-
-</footer>
-
-<script src="script.js"></script>
-
-</body>
->>>>>>> 18b7660 (feat: add Express backend and frontend API integration)
 </html>
