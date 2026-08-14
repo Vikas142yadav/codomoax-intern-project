@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="page-login">
 <header>
     <nav class="navbar">
         <div class="logo"><i class="fa-solid fa-blog"></i>BlogApp</div>
@@ -20,21 +20,33 @@
         <div class="menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></div>
     </nav>
 </header>
-<section class="form-section">
-    <div class="form-container">
-        <h2>Login</h2>
-        <form id="loginForm">
-            <div class="input-group">
-                <label>Email</label>
-                <input type="email" id="loginEmail" placeholder="Enter your email" required>
-            </div>
-            <div class="input-group">
-                <label>Password</label>
-                <input type="password" id="loginPassword" placeholder="Enter your password" required>
-            </div>
-            <button type="submit" class="btn full-btn">Login</button>
-            <p class="bottom-text">Don't have an account? <a href="register.html">Register</a></p>
-        </form>
+<section class="form-section auth-section">
+    <div class="auth-grid">
+        <div class="auth-side">
+            <span class="badge">Welcome Back</span>
+            <h2>Log in to manage your blog posts</h2>
+            <p>Access your dashboard, publish updates, and keep your content fresh. Fast, secure, and beautiful.</p>
+            <ul class="auth-benefits">
+                <li><i class="fa-solid fa-check"></i> Manage posts on the go</li>
+                <li><i class="fa-solid fa-check"></i> Secure login with JWT</li>
+                <li><i class="fa-solid fa-check"></i> Create, edit and delete blogs easily</li>
+            </ul>
+        </div>
+        <div class="form-container">
+            <h2>Login</h2>
+            <form id="loginForm" onsubmit="return false;">
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" id="loginEmail" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="button" id="loginSubmitBtn" class="btn btn-primary full-btn">Login</button>
+                <p class="bottom-text">Don't have an account? <a href="register.html">Register</a></p>
+            </form>
+        </div>
     </div>
 </section>
 <footer>

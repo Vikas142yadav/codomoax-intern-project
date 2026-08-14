@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="page-home">
 <header>
     <nav class="navbar">
         <div class="logo"><i class="fa-solid fa-blog"></i>BlogApp</div>
@@ -29,6 +29,22 @@
 </section>
 <section class="container">
     <h2 class="section-title">Latest Blogs</h2>
+    <div class="filter-bar">
+        <div class="filter-item">
+            <input id="searchInput" type="search" placeholder="Search blogs by title, author, or category">
+        </div>
+        <div class="filter-item">
+            <select id="categoryFilter">
+                <option value="">All categories</option>
+                <option>Technology</option>
+                <option>Programming</option>
+                <option>Travel</option>
+                <option>Education</option>
+                <option>Business</option>
+                <option>Lifestyle</option>
+            </select>
+        </div>
+    </div>
     <div class="blog-grid" id="blogGrid">
         <p class="empty-state">Loading latest posts...</p>
     </div>

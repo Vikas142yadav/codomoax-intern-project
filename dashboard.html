@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="page-dashboard">
 <header>
     <nav class="navbar">
         <div class="logo"><i class="fa-solid fa-blog"></i>BlogApp</div>
@@ -22,8 +22,37 @@
 </header>
 <section class="container">
     <div class="dashboard-header">
-        <h2>Dashboard</h2>
-        <a href="create-blog.html" class="btn"><i class="fa-solid fa-plus"></i> Create Blog</a>
+        <div>
+            <h2>My Blogs</h2>
+            <p class="dashboard-subtitle">Manage your posts, edit drafts, and delete outdated articles.</p>
+        </div>
+        <a href="create-blog.html" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Create Blog</a>
+    </div>
+    <div class="dashboard-notice">
+        <i class="fa-solid fa-lightbulb"></i>
+        <p>Welcome back! Use the search and category filter to quickly find specific posts. Create a new blog to share fresh ideas with your audience.</p>
+    </div>
+    <div class="dashboard-summary">
+        <div class="summary-card">
+            <span>Total posts</span>
+            <strong id="myBlogsCount">0</strong>
+        </div>
+    </div>
+    <div class="filter-bar">
+        <div class="filter-item">
+            <input id="searchInput" type="search" placeholder="Search your blogs">
+        </div>
+        <div class="filter-item">
+            <select id="categoryFilter">
+                <option value="">All categories</option>
+                <option>Technology</option>
+                <option>Programming</option>
+                <option>Travel</option>
+                <option>Education</option>
+                <option>Business</option>
+                <option>Lifestyle</option>
+            </select>
+        </div>
     </div>
     <div class="blog-grid" id="blogGrid">
         <p class="empty-state">Loading your blogs...</p>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="page-register">
 <header>
     <nav class="navbar">
         <div class="logo"><i class="fa-solid fa-blog"></i>BlogApp</div>
@@ -20,29 +20,41 @@
         <div class="menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></div>
     </nav>
 </header>
-<section class="form-section">
-    <div class="form-container">
-        <h2>Create Account</h2>
-        <form id="registerForm" action="http://localhost:3000/api/register" method="POST">
-            <div class="input-group">
-                <label>Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-            </div>
-            <div class="input-group">
-                <label>Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-            </div>
-            <div class="input-group">
-                <label>Password</label>
-                <input type="password" id="password" name="password" placeholder="Create a password" required>
-            </div>
-            <div class="input-group">
-                <label>Confirm Password</label>
-                <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
-            </div>
-            <button type="submit" class="btn full-btn">Register</button>
-            <p class="bottom-text">Already have an account? <a href="login.html">Login</a></p>
-        </form>
+<section class="form-section auth-section">
+    <div class="auth-grid">
+        <div class="auth-side">
+            <span class="badge">Join Today</span>
+            <h2>Create an account and share your story</h2>
+            <p>Start writing with a polished blogging experience. Register now to build a personal publishing space.</p>
+            <ul class="auth-benefits">
+                <li><i class="fa-solid fa-check"></i> Publish blogs in seconds</li>
+                <li><i class="fa-solid fa-check"></i> Track your posts from dashboard</li>
+                <li><i class="fa-solid fa-check"></i> Edit anytime with confidence</li>
+            </ul>
+        </div>
+        <div class="form-container">
+            <h2>Create Account</h2>
+            <form id="registerForm" onsubmit="return false;">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required>
+                </div>
+                <div class="input-group">
+                    <label>Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                </div>
+                <button type="button" id="registerSubmitBtn" class="btn btn-primary full-btn">Register</button>
+                <p class="bottom-text">Already have an account? <a href="login.html">Login</a></p>
+            </form>
+        </div>
     </div>
 </section>
 <footer>

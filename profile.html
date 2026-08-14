@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | Blog App</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+</head>
+<body class="page-profile">
+<header>
+  <nav class="navbar">
+    <div class="logo"><i class="fa-solid fa-blog"></i>BlogApp</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="create-blog.html">Create Blog</a></li>
+      <li><a href="#" id="logoutBtn">Logout</a></li>
+    </ul>
+    <div class="menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></div>
+  </nav>
+</header>
+<section class="container">
+  <div class="profile-card" id="profileCard">
+    <h2>Your Profile</h2>
+    <p>Loading...</p>
+  </div>
+</section>
+<footer>
+  <p>© 2026 Blog Application | Profile</p>
+</footer>
+<script>
+(async function(){
+  const API_BASE = (function(){
+    const host = window.location.hostname;
+    const port = window.location.port;
+    if (host === '127.0.0.1' || host === 'localhost') {
+      if (port && port !== '3000') return 'http://127.0.0.1:3000';
+      return window.location.origin;
+    }
+    if (window.location.protocol === 'file:') return 'http://127.0.0.1:3000';
+    return window.location.origin;
+  })();
+  const token = localStorage.getItem('token');
+  const card = document.getElementById('profileCard');
+  if (!token) { window.location.href = 'login.html'; return; }
+  try {
+    const res = await fetch(API_BASE + '/api/me', { headers: { Authorization: 'Bearer ' + token } });
+    const user = await (async () => {
+      const text = await res.text();
+      if (!text) return null;
+      try { return JSON.parse(text); } catch (e) { return null; }
+    })();
+    if (!res.ok || !user) { localStorage.removeItem('token'); window.location.href = 'login.html'; return; }
+    card.innerHTML = `<h2>${user.name}</h2><p><strong>Email:</strong> ${user.email}</p><a href="dashboard.html" class="btn">Back to Dashboard</a>`;
+    const logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) logoutBtn.addEventListener('click', (e) => { e.preventDefault(); localStorage.removeItem('token'); window.location.href = 'login.html'; });
+  } catch (err) {
+    card.innerHTML = '<p class="empty-state">Unable to load profile.</p>';
+  }
+})();
+</script>
+</body>
+</html>
