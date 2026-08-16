@@ -10,6 +10,11 @@ const PORT = process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017';
 const DB_NAME = process.env.MONGODB_DB || 'codomax';
 const JWT_SECRET = process.env.JWT_SECRET || 'change_this_secret_in_production';
+const MONGO_OPTIONS = {
+  serverSelectionTimeoutMS: 1500,
+  connectTimeoutMS: 1500,
+  socketTimeoutMS: 1500
+};
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -186,6 +191,7 @@ app.post('/api/register', async (req, res) => {
   }
 
   try {
+    console.log('Register attempt:', { name, normalizedEmail });
     const existing = await usersCollection.findOne({ email: normalizedEmail });
     if (existing) {
       return res.status(400).json({ message: 'Email already registered' });
@@ -200,6 +206,7 @@ app.post('/api/register', async (req, res) => {
       createdAt: new Date().toISOString()
     };
     const result = await usersCollection.insertOne(newUser);
+    console.log('User registered successfully:', { id: result.insertedId.toString(), email: normalizedEmail });
     res.json({ message: 'User registered', user: { id: result.insertedId.toString(), name: newUser.name, email: normalizedEmail } });
   } catch (err) {
     console.error('Register error', err);
@@ -215,11 +222,14 @@ app.post('/api/login', async (req, res) => {
   }
 
   try {
+    console.log('Login attempt:', { normalizedEmail, passwordLength: password.length });
     const user = await usersCollection.findOne({ email: normalizedEmail });
+    console.log('User found:', user ? 'Yes' : 'No', user ? { id: user._id, email: user.email, hasPasswordHash: !!user.passwordHash } : null);
     if (!user) {
       return res.status(401).json({ message: 'Invalid credentials' });
     }
     const valid = bcrypt.compareSync(password, user.passwordHash);
+    console.log('Password comparison result:', valid);
     if (!valid) {
       return res.status(401).json({ message: 'Invalid credentials' });
     }
@@ -452,7 +462,7 @@ app.delete('/internal/cleanup-smoke', async (req, res) => {
 
 async function start() {
   try {
-    const client = new MongoClient(MONGODB_URI);
+    const client = new MongoClient(MONGODB_URI, MONGO_OPTIONS);
     await client.connect();
     const db = client.db(DB_NAME);
     usersCollection = db.collection('users');
